@@ -1,0 +1,73 @@
+<html ng-app="crudApp">
+<head>
+<title>AngularJS Directive Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Include Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Include main CSS -->
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+<!-- Include jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Include AngularJS library -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<!-- Include Bootstrap Javascript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container wrapper" ng-controller="DbController">
+<h1 class="text-center">AngularJS CRUD Operations</h1>
+<nav class="navbar navbar-default">
+<div class="navbar-header">
+<div class="alert alert-default navbar-brand search-box">
+<button class="btn btn-primary"  ng-click="formToggle()">AddUser <span class="glyphicon glyphicon-plus"></span></button>
+</div>
+<div class="alert alert-default input-group search-box">
+<span class="input-group-btn">
+<input type="text" class="form-control" placeholder="Search Employee Details Into Database..." ng-model="search_query">
+</span>
+</div>
+</div>
+</nav>
+<div class="col-md-6 col-md-offset-3">
+
+<!-- Include form template which is used to insert data into database -->
+<div ng-include src="'form.html'"></div>
+
+ 
+<div ng-include src="'editForm.html'"></div>
+</div>
+<div class="clearfix"></div>
+
+<!-- Table to show employee detalis -->
+<div class="table-responsive">
+<table class="table table-hover">
+<tr>
+
+<th>Name</th>
+<th>Email</th>
+<th>Password</th>
+<th>Mobile</th>
+<th>Profile Pic</th>
+</tr>
+<tr ng-repeat="detail in formDetails">
+<td>
+{{detail.name}}</td>
+    <td>{{detail.email}}</td>
+    <td>{{detail.password}}</td>
+    <td>{{detail.mobile}}</td>
+    <td>{{detail.imageUrl}}</td>
+<td>
+<button class="btn btn-warning" ng-click="editInfo(detail)" title="Edit"><span class="glyphicon glyphicon-edit"></span></button>
+</td>
+<td>
+<button class="btn btn-danger" ng-click="deleteInfo(detail)" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<!-- Include controller -->
+<script src="JS/angular-script.js"></script>
+</body>
+</html>
