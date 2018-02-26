@@ -9,10 +9,10 @@ CDN are used for all the front end apis linke jquery,angular,bootstrap
 in backend node/express js is been used.
 
 requirement npm modules:-
-1. express (npm intall express --save)
-2. cors    (npm intall cors --save)
-3. body-parser  (npm intall body-parser --save)
-4. axios   npm intall axios --save)
+1. express (npm install express --save)
+2. cors    (npm install cors --save)
+3. body-parser  (npm install body-parser --save)
+4. axios   (npm install axios --save)
 
 after installation open Webstorm as nodejs IDE and run app.js
 
