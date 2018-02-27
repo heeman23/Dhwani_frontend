@@ -18,7 +18,7 @@ after installation open Webstorm as nodejs IDE and run app.js
 
 and in browser use URL link as 
 
-http://localhost:2224/
+run index.html file in browser
 
 
 ## API Reference
